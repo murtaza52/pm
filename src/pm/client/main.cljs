@@ -1,15 +1,13 @@
 (ns pm.client.main
   (:require [pm.client.templating :as templ]
-            [jayq.core :as jq]))
+            [pm.client.utils :as utils]))
 
 (defn init
   "Set the chrome and redirect to the initial page"
   []
-  (templ/set-chrome "Project Management"))
+  (do
+    (templ/set-chrome "Project Management")
+    (templ/set-toolbar)))
 
-(defn onload
-  "Function to add form on document.ready"
-  []
-  "hello")
-
-(init)
+(utils/onload (utils/set-repl)
+              (init))
