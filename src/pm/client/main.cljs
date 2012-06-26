@@ -9,7 +9,8 @@
   []
   (do
     (templ/set-chrome "Project Management")
-    (em/wait-for-load (templ/set-toolbar))))
+    ;(em/wait-for-load (templ/set-toolbar))
+    ))
 
 (utils/onload (utils/set-repl)
               (init))
