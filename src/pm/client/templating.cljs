@@ -14,15 +14,14 @@
   "Takes html string as input and inserts it into the DOM" 
   [".cljs-main"] (em/content c))
 
-(defsnippet toolbar "templates/components.html" ["top-navbar"] []
+(defsnippet toolbar "templates/components.html" ["#top-navbar"] []
   ["#hello"] (em/content "hi"))
 
 (defaction set-chrome [title] 
-  ["title"] (em/content title)
-  ["header"] (em/html-content (get-html "pm/templates/components.html" "top-navbar")))
+  ["title"] (em/content title))
 
-(defaction set-toolbar [title] 
-  ["header"] (em/content (toolbar)))
+(defaction set-toolbar [] 
+  ["#header"] (em/content (toolbar)))
 
 
 

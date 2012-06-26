@@ -19,7 +19,7 @@
     (when (and js/console (@state :debug))
       (repl/connect repl-url)))
 
-(defn onload
-  "Function to add form on document.ready"
-  [& forms]
-  (apply jq/$ forms))
+;(defn onload
+;  "Function to add form on document.ready"
+;  [& forms]
+;  (apply jq/$ forms))
