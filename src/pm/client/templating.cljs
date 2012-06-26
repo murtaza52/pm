@@ -5,10 +5,10 @@
                    [fetch.macros :as fm])
   (:use-macros [enfocus.macros :only [defsnippet deftemplate defaction]]))
 
-(defn doc [] js/document) 
+(defn doc [] js/document)
 
-(defn get-html [url sel]
-  (fm/letrem [html-templ (get-template url sel)] html-templ))
+(comment (defn get-html [url sel]
+  (fm/letrem [html-templ (get-template url sel)] html-templ)))
 
 (defaction layout [c]
   "Takes html string as input and inserts it into the DOM" 
