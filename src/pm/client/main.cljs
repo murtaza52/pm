@@ -1,7 +1,8 @@
 (ns pm.client.main
   (:require [pm.client.templating :as templ]
             [pm.client.utils :as utils]
-            [enfocus.core :as ef])
+            [enfocus.core :as ef]
+            [cljsbinding :as binding])
   (:require-macros [enfocus.macros :as em]
                    [jayq.macros :as jqm]))
 
@@ -14,5 +15,6 @@
 
 (jqm/ready
  (init)
- (utils/set-repl))
+ (utils/set-repl)
+ (binding/boot))
 
