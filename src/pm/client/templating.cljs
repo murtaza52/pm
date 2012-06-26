@@ -11,10 +11,18 @@
 (comment (defn get-html [url sel]
   (fm/letrem [html-templ (get-template url sel)] html-templ)))
 
+;;This Works
 (defn layout [c]
   "Takes html string as input and inserts it into the DOM" 
   (em/at (doc)
          [".cljs-main"] (em/content c)))
+
+;;This does not work
+(comment
+  (defaction layout [c]
+  "Takes html string as input and inserts it into the DOM" 
+  [".cljs-main"] (em/content c))
+  )
 
 (defsnippet toolbar "templates/components.html" ["#top-navbar"] []
   ["#hello"] (em/content "hi"))
