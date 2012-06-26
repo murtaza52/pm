@@ -4,4 +4,4 @@ pom.xml
 /classes/
 .lein-deps-sum
 /resources/public/cljs/client.js
-.lein*
+.lein-cljsbuild-compiler-0/*
