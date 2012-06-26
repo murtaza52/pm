@@ -6,3 +6,4 @@ pom.xml
 /resources/public/cljs/client.js
 .lein-cljsbuild-compiler-0/*
 #*
+/target/
