@@ -52,4 +52,4 @@
 
 (defn ^:export hello
   []
-  (js/alert))
+  (js/alert "hi from cljs"))

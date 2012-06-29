@@ -1,6 +1,6 @@
 (ns pm.client.models)
 
-(def new-project (atom {:hello 2}))
+(def proj (atom {:hello 2}))
 
 
 
