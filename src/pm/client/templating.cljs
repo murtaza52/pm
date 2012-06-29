@@ -49,3 +49,7 @@
 (defn meclicked
   []
   (js/alert "cljs-binding clicked"))
+
+(defn ^:export hello
+  []
+  (js/alert))
