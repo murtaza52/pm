@@ -6,11 +6,11 @@ The purpose of the project is to provide a workign template combining the diffre
 
 Currently it uses the following the libraries -
 
-1) Noir - for server side development.
-2) lein-cljsbuild - for compilation of clojurescript.
-3) Shoreleave - for client side remoting and pubsub
-4) Enfocus - for DOM manipulation, templating and client side event capturing.
-5) cljs-bind - for declaratively binding DOM actions and data to clojurescript fucntions and atoms respectively. 
++ Noir - for server side development.
++ lein-cljsbuild - for compilation of clojurescript.
++ Shoreleave - for client side remoting and pubsub
++ Enfocus - for DOM manipulation, templating and client side event capturing.
++ cljs-bind - for declaratively binding DOM actions and data to clojurescript fucntions and atoms respectively. 
   
 ## Usage
 
