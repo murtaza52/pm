@@ -10,23 +10,10 @@
 
 (defn doc [] js/document)
 
-(comment (defn get-html [url sel]
-  (fm/letrem [html-templ (get-template url sel)] html-templ)))
-
 ;"Takes html string as input and inserts it into the DOM"
 (defaction layout
   [c]
   [".cljs-main"] (em/content c))
-
-;;This Works
-
-(comment
-  (defn layout
-  "Takes html string as input and inserts it into the DOM"
-  [c]
-  (em/at (doc)
-         [".cljs-main"] (em/content c)))
- )
 
 (defsnippet toolbar "templates/components.html" ["#top-navbar"] []
   ["#hello"] (em/content "hi"))
@@ -45,10 +32,6 @@
     (layout c))
   (.modal (jq/$ "#project-add-modal") "show")
   (binding/bindall (jq/$ "#project-add-modal")))
-
-(defn meclicked
-  []
-  (js/alert "cljs-binding clicked"))
 
 (defn ^:export hello
   []
