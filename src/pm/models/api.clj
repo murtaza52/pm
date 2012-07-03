@@ -1,4 +1,4 @@
-(ns pm.views.api
+(ns pm.models.api
   (:use [noir.shoreleave.rpc :only [defremote]]))
 
 (def projects (atom [{:hello 7}]))

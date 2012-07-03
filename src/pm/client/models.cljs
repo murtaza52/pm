@@ -11,21 +11,11 @@
 
 (defn ^:export show
   []
-  (srm/letrpc [proj (get-projects)]
-              (utils/log "Existing Projects :" proj)))
-
-
-(comment
-  (defn ^:export show
-  []
   (srm/letrpc [proj (api/get-projects)]
-          (utils/log proj "Existing Projects :" proj)))
+              (utils/log "Existing Projects :" proj)))
 
 (defn ^:export add
   []
   (srm/letrpc [proj (api/add-project {:newone 3})]
           (utils/log "New + Existing :" proj)))
-
-)
-
   

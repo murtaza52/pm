@@ -3,21 +3,21 @@
             [noir.shoreleave.rpc :as rpc]
             [ring.middleware.gzip]
             [ring.middleware.file-info]
-            [ring.middleware.anti-forgery]))
+            [ring.middleware.anti-forgery]
+            [pm.models.api]))
 
-(server/load-views "src/pm/views/")
+(server/load-views-ns 'pm.views)
 
 ;;Remote Namesapces
 ;;-----------------
 (rpc/activate-remotes!)
-;(rpc/remote-ns 'pm.models.api :as "api")
+(rpc/remote-ns 'pm.models.api :as "api")
 
 ;;Middleware
 ;;----------
 (server/add-middleware ring.middleware.gzip/wrap-gzip)
 (server/add-middleware ring.middleware.file-info/wrap-file-info)
 (server/add-middleware ring.middleware.anti-forgery/wrap-anti-forgery)
-;(server/add-middleware remote/wrap-remotes)
 
 (def handler (server/gen-handler {:mode :dev :ns 'pm}))
 
