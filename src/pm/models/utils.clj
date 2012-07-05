@@ -1,4 +1,5 @@
-(ns pm.models.utils)
+(ns pm.models.utils
+  (:use [datomic.api :as d]))
 
-(comment (defmacro q+ [& body]
-  `(try (q ~@body) (catch Exception e# (println e#)))))
+(defmacro q+ [& body]
+  `(try (q ~@body) (catch Exception e# (println e#))))

@@ -13,7 +13,8 @@
                  [shoreleave "0.2.2-SNAPSHOT"]
                  [shoreleave/shoreleave-remote-noir "0.2.2-SNAPSHOT"]
                  [com.cemerick/ring-gzip-middleware "0.1.1"]
-                 [ring-anti-forgery "0.1.3"]]
+                 [ring-anti-forgery "0.1.3"]
+                 [com.cemerick/pomegranate "0.0.13"]]
   :cljsbuild {:repl-listen-port 9000
               :builds [{:source-path "src"
                         :compiler {:output-to "resources/public/cljs/client.js"
@@ -22,7 +23,7 @@
   :main ^{:skip-aot true} pm.server
   :ring {:handler pm.server/handler
          :auto-refresh? true}
-  :immutant {:init pm.server/imm
+  :immutant {
              :resolve-dependencies true
              :swank-port 4210
              :nrepl-port 4220

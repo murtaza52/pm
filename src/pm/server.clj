@@ -5,7 +5,7 @@
             [ring.middleware.file-info]
             [ring.middleware.anti-forgery]
             [pm.models.api]
-            [immutant.web :as web]))
+            [clojure.java.io :as io]))
 
 (server/load-views-ns 'pm.views)
 
@@ -34,9 +34,14 @@
 ;:init pm.server/imm
 ;;Immutant Settings
 ;;-----------------
-(defn imm
+(comment
+  (defn imm
   []
+  (require '[immutant.web :as web]
+           '[immutant.utilities :as util])
+  (server/load-views (io/file (util/app-root) "src/pm/views"))
   (web/start "/dev" handler))
+  )
 
 
 (defn sstart
