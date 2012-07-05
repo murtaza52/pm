@@ -34,15 +34,12 @@
 ;:init pm.server/imm
 ;;Immutant Settings
 ;;-----------------
-(comment
-  (defn imm
+(defn imm
   []
   (require '[immutant.web :as web]
            '[immutant.utilities :as util])
-  (server/load-views (io/file (util/app-root) "src/pm/views"))
-  (web/start "/dev" handler))
-  )
-
+  (server/load-views (io/file @(resolve 'util/app-root) "src/pm/views"))
+  @(resolve 'web/start "/dev" handler))
 
 (defn sstart
   "A common start function, abstarcted out so that it can be used from the REPL as well as command line"

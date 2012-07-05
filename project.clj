@@ -24,6 +24,7 @@
   :ring {:handler pm.server/handler
          :auto-refresh? true}
   :immutant {
+             ;;:init pm.server/imm
              :resolve-dependencies true
              :swank-port 4210
              :nrepl-port 4220
